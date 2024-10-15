@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para centrar la imagen */
+        #sobre-mi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        #sobre-mi img {
+            width: 200px; /* Ajusta el tamaño de la imagen */
+            height: 200px;
+            border-radius: 50%; /* Hace que la imagen sea redonda */
+            margin-top: 20px; /* Espacio superior entre el texto y la imagen */
+            cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #fff;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de Navegación -->
+    <nav class="navbar">
+        <div class="menu">
+            <div class="logo">Mis Proyectos</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </nav>
+
+    <!-- Información Sobre Mí -->
+    <section id="sobre-mi">
+        <h1>Sobre Mí</h1>
+        <p>Diego Méndez Puente 20660068.</p>
+        <p>Estudiante de la carrera de Ingeniería en Sistemas Computacionales en la Universidad Tecnológica de México.</p>
+        <p>Matehuala, S.L.P México</p>
+
+        <!-- Imagen centrada -->
+        <img src="pc.jpg" alt="Foto de Diego Méndez" id="profileImg" onclick="openModal(this)">
+    </section>
+
+    <!-- Modal para la imagen ampliada -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="">
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'flex';
+            modalImg.src = img.src; // Asigna la fuente de la imagen al modal
+            document.addEventListener('keydown', handleKeyPress); // Escucha las pulsaciones de teclas
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+            document.removeEventListener('keydown', handleKeyPress); // Deja de escuchar las pulsaciones de teclas
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Escape') { // Si la tecla presionada es "Esc"
+                closeModal(); // Cierra el modal
+            }
+        }
+    </script>
+</body>
+</html>

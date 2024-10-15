@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilos del menú de navegación */
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #555;
+        }
+
+        .hamburger-menu {
+            display: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Estilos de los planes */
+        .services-section {
+            margin-top: 80px; /* Espacio para el menú fijo */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-card p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .service-card .price {
+            font-size: 24px;
+            color: #007bff; /* Color azul */
+            margin: 10px 0;
+        }
+
+        .service-card button {
+            background-color: #007bff; /* Color azul */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .service-card button:hover {
+            background-color: #0056b3; /* Color azul más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú de Navegación -->
+    <nav class="navbar">
+        <div class="menu">
+            <div class="logo">Mis Proyectos</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </nav>
+
+    <!-- Sección de Servicios -->
+    <section class="services-section">
+        <div class="service-card">
+            <h2>Plan Básico</h2>
+            <p>Velocidad: 50 Mbps</p>
+            <p>Datos: Ilimitados</p>
+            <p>Soporte: 24/7</p>
+            <p class="price">$299/mes</p>
+            <button>Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Plan Estándar</h2>
+            <p>Velocidad: 100 Mbps</p>
+            <p>Datos: Ilimitados</p>
+            <p>Soporte: 24/7</p>
+            <p class="price">$499/mes</p>
+            <button>Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Plan Avanzado</h2>
+            <p>Velocidad: 200 Mbps</p>
+            <p>Datos: Ilimitados</p>
+            <p>Soporte: 24/7</p>
+            <p class="price">$699/mes</p>
+            <button>Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Plan Premium</h2>
+            <p>Velocidad: 500 Mbps</p>
+            <p>Datos: Ilimitados</p>
+            <p>Soporte: 24/7</p>
+            <p class="price">$999/mes</p>
+            <button>Seleccionar</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Plan Familiar</h2>
+            <p>Velocidad: 1000 Mbps</p>
+            <p>Datos: Ilimitados</p>
+            <p>Soporte: 24/7</p>
+            <p class="price">$1299/mes</p>
+            <button>Seleccionar</button>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
